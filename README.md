@@ -5,9 +5,7 @@ Just like delegation, blocks are used as a means of callback. A preferred conven
 
     - (void)objectDidReceiveEvent:(id)object;
 
-This allows the delegate to distinguish the messaging object and apply any necessary changes to it.
-
-With blocks this style is also necessary but for different reasons. Take for example the following method:
+This allows the delegate to distinguish the messaging object and apply any necessary changes to it. With blocks this style is also necessary but for different reasons. Take for example the following method:
 
     - (void)performMethodWithCompletionHandler:(void (^)(NSArray *results, NSError *error)completionHandler;
     

@@ -32,7 +32,7 @@ This can be solved with the following:
         [weakObject reset];
     }];
     
-However there is a better solution:
+However, there is a better solution:
 
      [object performMethodWithCompletionHandler:^(Object *object, NSArray *results, NSError *error) {
          NSLog("%@", results);

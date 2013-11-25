@@ -9,7 +9,7 @@ This allows the delegate to distinguish the messaging object and respond with an
 
     - (void)performMethodWithCompletionHandler:(void (^)(NSArray *results, NSError *error)completionHandler;
     
-In practice, there would be less confusion about the object that is performing the callback. However, if the completionHandler was a strong property, referring to the object within the block would cause a retain cycle:
+In practice, there would be less confusion about the object that is performing the callback because of the inline style. However, if the completionHandler was a strong property, referring to the object within the block would cause a retain cycle:
 
     [object performMethodWithCompletionHandler:^(NSArray *results, NSError *error) {        
          // Referencing object inside of object's completionHander creates retain cycle.

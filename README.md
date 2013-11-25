@@ -1,4 +1,4 @@
-Objective-C Block Convention
+Objective-C Block Argument Format Convention
 ======================
 
 Just like delegation, blocks are used as a means of callback. A preferred convention for delegate interfaces is to include the messaging object in the message as an argument.

@@ -18,15 +18,15 @@ In practice, there would be less confusion about the object that is performing t
     
 This can be solved with the following:
 
-    __weak Object *weakObject = object;
-    [object performMethodWithCompletionHandler:^(NSArray *results, NSError *error) {
+    __weak Object *weakObject = self.object;
+    [self.object performMethodWithCompletionHandler:^(NSArray *results, NSError *error) {
         // Using a weak pointer prevents the block from retaining object and prevents the retain cycle.
         [weakObject reset];
     }];
     
 However, there is a better solution:
 
-     [object performMethodWithCompletionHandler:^(Object *object, NSArray *results, NSError *error) {
+     [self.object performMethodWithCompletionHandler:^(Object *object, NSArray *results, NSError *error) {
          // The object pointer within this scope refers to the argument passed in by the block and thus prevents the retain cycle.         
          [object reset];
      }];
